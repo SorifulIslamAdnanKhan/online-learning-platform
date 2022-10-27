@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -12,9 +12,11 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const { googleLogin, signIn } = useContext(AuthContext);
+    const { googleLogin, githubLogin,signIn } = useContext(AuthContext);
     const [error, setError] = useState('');
+    
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleLogin = () => {
         googleLogin(googleProvider)
@@ -26,7 +28,18 @@ const Login = () => {
         .catch(error =>{
             setError(error.message);
         })
+    }
 
+    const handleGitHubLogin = () =>{
+        githubLogin(githubProvider)
+        .then(result=>{
+            const user = result.user;
+            setError('');
+            console.log(user);
+        })
+        .catch(error =>{
+            setError(error.message);
+        })
     }
 
     const handleSubmit = (event) =>{
@@ -78,7 +91,7 @@ const Login = () => {
                         </div>
                         <div className='text-center'>
                             <button onClick={handleGoogleLogin} className="btn btn-outline p-2 m-2"><FaGoogle></FaGoogle> Google</button>
-                            <button className="btn btn-outline p-2"><FaGithub></FaGithub> GitHub</button>
+                            <button onClick={handleGitHubLogin} className="btn btn-outline p-2"><FaGithub></FaGithub> GitHub</button>
                         </div>
                         <div className='text-center'>
                             <p>Not have an account! Please <Link to='/register' className='btn btn-success text-white'>Register</Link> </p>
