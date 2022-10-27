@@ -10,6 +10,7 @@ import Register from '../Pages/Register/Register';
 import Tutorial from '../Pages/Tutorials/Tutorial';
 import SingleTutorial from '../Pages/Tutorials/SingleTutorial/SingleTutorial';
 import Checkout from '../Pages/Checkout/Checkout';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/checkout/:id',
-                element:<Checkout></Checkout>,
+                element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
                 loader: ({params}) => fetch(`https://akj-tutorial-server.vercel.app/tutorials/${params.id}`)
             },
             {

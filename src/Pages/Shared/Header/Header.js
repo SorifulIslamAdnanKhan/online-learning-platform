@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/logo.png';
-import Avatar from '../../../assets/avatar.jpg';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () =>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>{
+            console.error(error);
+        })
+    }
     return (
         <div className="navbar bg-base-100 p-10">
             <div className="navbar-start">
@@ -31,16 +42,36 @@ const Header = () => {
                     <li><Link to='/faq'>FAQs</Link></li>
                 </ul>
             </div>
-            
-            <div className="navbar-end flex" >
+
+            <div className="w-100 flex" >
                 <div className="form-control">
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
+
                 </div>
-                <div className="w-10 rounded-full flex">
-                    <Link to='/login'>Login</Link>
-                    <img src={Avatar} />
+                <div className="w-140 rounded-full flex">
+                    <div>
+                        {
+                            user?.uid ?
+                                <>
+                                    <Link onClick={handleLogout} variant="outline-dark">Log out</Link>
+                                    <span>{user?.displayName}</span>
+                                </>
+                                :
+                                <>
+                                    <Link to='/login'>Login</Link>
+                                </>
+                        }
+                    </div>
+                    <div>
+                        {
+                            user?.photoURL ?
+                                <img src={user?.photoURL} />
+                                :
+                            <FaUser></FaUser>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

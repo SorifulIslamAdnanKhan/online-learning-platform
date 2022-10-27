@@ -9,7 +9,7 @@ const SingleTutorial = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200 p-40">
+            <div className="hero bg-base-200 p-12">
                 <div className="hero-content text-center">
                     <div className="max-w-md">
                         <h1 className="text-5xl font-bold">What You'll Learn</h1>
@@ -30,7 +30,7 @@ const SingleTutorial = () => {
                         <div>
                             <p>Total Enrollment: <b>{total_enrollment}</b></p>
                             <p>Rating: <b>{rating.number}</b></p>
-                            <p>Price: <b>${price}</b></p>
+                            <p>Price:<b>${price}</b></p>
                         </div>
                         <Link to={`/checkout/${id}`} className="btn btn-primary m-2">Enroll Tutorial</Link>
                     </div>

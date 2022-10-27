@@ -15,7 +15,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-5xl font-bold m-8">What We Offer!</h1>
+            <h1 className="text-5xl font-bold m-8 text-center">What We Offer!</h1>
             <div className='grid lg:grid-cols-2 gap-10 p-20'>
                 <div className="card grid-rows-6 bg-neutral text-neutral-content">
                     <div className="card-body items-center text-center">
