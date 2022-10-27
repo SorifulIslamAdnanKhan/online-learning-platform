@@ -5,7 +5,7 @@ import Avatar from '../../../assets/avatar.jpg';
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-100 p-8">
+        <div className="navbar bg-base-100 p-10">
             <div className="navbar-start">
                 <div >
                     <img className="w-10 rounded-full" src={Logo} />
@@ -20,8 +20,6 @@ const Header = () => {
                         <li><Link to='/tutorials'>Tutorials</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/faq'>FAQs</Link></li>
-
-                        <li><a>Item 3</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,13 +31,15 @@ const Header = () => {
                     <li><Link to='/faq'>FAQs</Link></li>
                 </ul>
             </div>
-            <div className="navbar-end">
+            
+            <div className="navbar-end flex" >
                 <div className="form-control">
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
                 </div>
-                <div className="w-10 rounded-full">
+                <div className="w-10 rounded-full flex">
+                    <Link to='/login'>Login</Link>
                     <img src={Avatar} />
                 </div>
             </div>

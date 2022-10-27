@@ -3,9 +3,13 @@ import Main from '../layouts/Main';
 import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home';
 import Blog from '../Pages/Blog/Blog';
-import Tutorials from '../Pages/Tutorials/Tutorials';
-import TutorialDetails from '../Pages/Tutorials/TutorialDetails';
+import TutorialDetails from '../Pages/Tutorials/TutorialCard';
 import FAQs from '../Pages/FAQs/FAQs';
+import Login from '../Pages/Login/Login';
+import Register from '../Pages/Register/Register';
+import Tutorial from '../Pages/Tutorials/Tutorial';
+import SingleTutorial from '../Pages/Tutorials/SingleTutorial/SingleTutorial';
+import Checkout from '../Pages/Checkout/Checkout';
 
 export const router = createBrowserRouter([
     {
@@ -19,17 +23,30 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/tutorials',
-                element:<Tutorials></Tutorials>,
+                element:<Tutorial></Tutorial>,
                 loader: () => fetch('https://akj-tutorial-server.vercel.app/tutorials/')
             },
             {
                 path:'/tutorials/:id',
-                element:<TutorialDetails></TutorialDetails>,
+                element:<SingleTutorial></SingleTutorial>,
+                loader: ({params}) => fetch(`https://akj-tutorial-server.vercel.app/tutorials/${params.id}`)
+            },
+            {
+                path:'/checkout/:id',
+                element:<Checkout></Checkout>,
                 loader: ({params}) => fetch(`https://akj-tutorial-server.vercel.app/tutorials/${params.id}`)
             },
             {
                 path:'/blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             },
             {
                 path:'/faq',
