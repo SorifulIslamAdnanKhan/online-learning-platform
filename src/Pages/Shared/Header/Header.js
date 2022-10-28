@@ -43,20 +43,19 @@ const Header = () => {
                 </ul>
             </div>
 
-            <div className="w-100 flex" >
+            <div className="w-96 flex" >
                 <div className="form-control">
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
 
                 </div>
-                <div className="w-140 rounded-full flex">
+                <div className="rounded-full flex">
                     <div>
                         {
                             user?.uid ?
                                 <>
                                     <Link onClick={handleLogout} variant="outline-dark">Log out</Link>
-                                    <span>{user?.displayName}</span>
                                 </>
                                 :
                                 <>
@@ -64,10 +63,10 @@ const Header = () => {
                                 </>
                         }
                     </div>
-                    <div>
+                    <div className='tooltip' data-tip={user?.displayName}>
                         {
                             user?.photoURL ?
-                                <img className='w-10 rounded-full' src={user?.photoURL} />
+                                <img className='w-7 rounded-full tooltip'  src={user?.photoURL} />
                                 :
                             <FaUser></FaUser>
                         }

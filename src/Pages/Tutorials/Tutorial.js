@@ -15,7 +15,7 @@ const Tutorial = () => {
     return (
 
         <div className='flex'>
-            <div className='p-10'>
+            <div className='p-4'>
                 <div>
                     {
                         tutorials.map(tutorial => <p
@@ -25,7 +25,7 @@ const Tutorial = () => {
                     }
                 </div>
             </div>
-            <div className='grid lg:grid-cols-3 gap-6 p-4'>
+            <div className='grid lg:grid-cols-3 gap-6 p-2'>
                 {
                     tutorials.map(tutorial =><TutorialCard
                         key={tutorial.id}
