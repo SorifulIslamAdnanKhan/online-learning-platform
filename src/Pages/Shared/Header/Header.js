@@ -48,6 +48,7 @@ const Header = () => {
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
+
                 </div>
                 <div className="rounded-full flex">
                     <div>
@@ -65,7 +66,7 @@ const Header = () => {
                     <div className='tooltip' data-tip={user?.displayName}>
                         {
                             user?.photoURL ?
-                                <img className='w-7 rounded-full tooltip'  src={user?.photoURL} />
+                                <img className='w-7 rounded-full' src={user?.photoURL} />
                                 :
                             <FaUser></FaUser>
                         }
