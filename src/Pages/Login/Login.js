@@ -4,8 +4,6 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
-
-
 const Login = () => {
 
     const navigate = useNavigate();
@@ -24,7 +22,6 @@ const Login = () => {
             const user = result.user;
             setError('');
             navigate(from, {replace: true});
-            //console.log(user);
         })
         .catch(error =>{
             setError(error.message);
@@ -37,7 +34,6 @@ const Login = () => {
             const user = result.user;
             setError('');
             navigate(from, {replace: true});
-            //console.log(user);
         })
         .catch(error =>{
             setError(error.message);
@@ -57,7 +53,6 @@ const Login = () => {
             form.reset();
             setError('');
             navigate(from, {replace: true});
-            //console.log(user);
         })
         .catch(error=>{
             setError(error.message);

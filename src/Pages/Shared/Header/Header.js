@@ -48,14 +48,13 @@ const Header = () => {
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
-
                 </div>
                 <div className="rounded-full flex">
                     <div>
                         {
                             user?.uid ?
                                 <>
-                                    <Link onClick={handleLogout} variant="outline-dark">Log out</Link>
+                                    <Link className='text-xs' onClick={handleLogout} variant="outline-dark">Log out</Link>
                                 </>
                                 :
                                 <>

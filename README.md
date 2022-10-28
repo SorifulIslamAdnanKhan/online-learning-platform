@@ -15,6 +15,7 @@
     * HTML
     * CSS
     * JSX
+    * Firebase
     * React Tailwind
     * React Router
     * React Router Dom

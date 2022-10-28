@@ -10,7 +10,6 @@ const Register = () => {
 
         event.preventDefault();
 
-
         const form = event.target;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
@@ -22,12 +21,10 @@ const Register = () => {
             const user = result.user;
             form.reset();
             setError('');
-           // console.log(user);
         })
         .catch(error=>{
             setError(error.message);
         })
-        //console.log(name, email, password, photoURL);
     }
     return (
         <div className="hero min-h-screen bg-base-200">
