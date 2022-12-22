@@ -39,17 +39,17 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tutorials'>Tutorials</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='/faq'>FAQs</Link></li>
+                    {/* <li><Link to='/faq'>FAQs</Link></li> */}
                 </ul>
             </div>
 
             <div className="w-96 flex" >
-                <div className="form-control">
+                {/* <div className="form-control">
                     <label className="label cursor-pointer">
                         <input type="checkbox" className="toggle toggle-accent" onChange />
                     </label>
 
-                </div>
+                </div> */}
                 <div className="rounded-full flex">
                     <div>
                         {
