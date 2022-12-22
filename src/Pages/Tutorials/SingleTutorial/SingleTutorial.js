@@ -21,7 +21,7 @@ const SingleTutorial = () => {
             </div>
 
             <div className='p-10'>
-                <div className="card bg-orange-400 ">
+                <div className="card">
                     <div className='text-end m-2 p-2'>
                         <Pdf targetRef={ref} filename="tutorial.pdf">
                             {({ toPdf }) => <button onClick={toPdf} className='btn btn-success text-white'>Download Tutorial Details as PDF</button>}
